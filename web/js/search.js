@@ -9,7 +9,8 @@
         });
         $.ajax({
             type: "POST",
-            url: "http://dev.shannonai.com:8011/api/search/research_report_figure",
+            //url: "http://dev.shannonai.com:8011/api/search/research_report_figure",
+            url: "http://127.0.0.1:3001/api/search/research_report_figure",
             dataType: 'JSON',
             data: JSON.stringify(params),
             headers: {
@@ -34,7 +35,8 @@
     var downPdf = function (url) {
         $.ajax({
             type: "get",
-            url: "http://dev.shannonai.com:8011" + url,
+            //url: "http://dev.shannonai.com:8011" + url,
+            url: "http://127.0.0.1:3001" + url,
             dataType: 'JSON',
             headers: {
                 "token": token
