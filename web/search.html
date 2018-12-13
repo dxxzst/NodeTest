@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>研究报告搜索</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+<div style="background-color: #f2f2f2;padding-top: 40px;width: 100%;height: 100%">
+    <div style="background-color: #fff;width: 80%;margin: auto;padding: 30px;">
+        <div>
+            <form id="searchForm" onsubmit="return false" style="width: 30%;margin-bottom: 30px;">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." name="search">
+                    <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+          </span>
+                </div>
+            </form>
+        </div>
+        <div class="bs-example">
+            <table class="table table-bordered table-hover" data-mobile-responsive="true" id="searchTable"
+                   align="center">
+                <thead>
+                <tr>
+                    <th data-field="showImg">图片示例</th>
+                    <th data-field="down">下载文件</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="pagination" class="pagination"></div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-table.min.js"></script>
+<script src="js/layer.min.js"></script>
+<script src="js/myPagination.js"></script>
+<script src="js/search.js"></script>
+</html>

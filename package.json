@@ -1,0 +1,23 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "my node server test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxxzst/NodeTest.git"
+  },
+  "keywords": [
+    "node",
+    "test"
+  ],
+  "author": "XueSong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxxzst/NodeTest/issues"
+  },
+  "homepage": "https://github.com/dxxzst/NodeTest#readme"
+}
