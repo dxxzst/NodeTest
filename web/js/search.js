@@ -66,6 +66,8 @@
             downPdf(ownUrl);
         })
     };
+
+
     var searchSubmit = function () {
         $('#searchForm').submit(function () {
             submitForm(1, 10, true);
@@ -84,7 +86,7 @@
         new Page({
             id: 'pagination',
             pageTotal: Math.ceil(data.totalCount / 10), //必填,总页数
-            pageAmount: 10,  //每页多少条
+            pageAmount: 10, //每页多少条
             dataTotal: data.totalCount, //总共多少条数据
             curPage: 1, //初始页码,不填默认为1
             pageSize: 10, //分页个数,不填默认为5
@@ -95,6 +97,7 @@
             }
         });
     };
+
     var init = function () {
         //initTable();
         tableClick();

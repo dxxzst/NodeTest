@@ -1,9 +1,9 @@
 function route(handle, pathname, response, request) {
     console.log("About to route a request for " + pathname);
 
-    let reqArry = pathname.split('/');
+    let reaArr = pathname.split('/');
 
-    handle(reqArry, response, request);
+    handle(reaArr, response, request);
 }
 
 exports.route = route;
