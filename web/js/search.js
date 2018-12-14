@@ -1,6 +1,8 @@
 (function () {
     var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWltZW5nIiwicGFzc3dvcmQiOiJ5aW1lbmciLCJ1c2VyVHlwZSI6InR5cGUxIiwiZXhwIjoxNTQ3MTc3Mzk3LCJpc3MiOiJnby5taWNyby5zcnYudXNlciJ9.1znZIOV6gvEp5-B-AfgkCqyHAAKwhlIvTc3-svMGoPI";
     var arr = [];
+    var serverPath = "http://" + window.location.host;
+
     //搜索内容
     var getData = function (params, flag) {
         var loading = parent.layer.load(0, {
@@ -10,7 +12,7 @@
         $.ajax({
             type: "POST",
             //url: "http://dev.shannonai.com:8011/api/search/research_report_figure",
-            url: "http://127.0.0.1:3001/api/search/research_report_figure",
+            url: serverPath + "/api/search/research_report_figure",
             dataType: 'JSON',
             data: JSON.stringify(params),
             headers: {
@@ -27,25 +29,38 @@
                 }
             },
             error: function (error) {
+                parent.layer.close(loading);
                 console.log(error)
             }
         });
     };
     //下载PDF
     var downPdf = function (url) {
+        var loading = parent.layer.load(0, {
+            scrollbar: false,
+            shade: [0.3, '#fff']
+        });
         $.ajax({
             type: "get",
             //url: "http://dev.shannonai.com:8011" + url,
-            url: "http://127.0.0.1:3001" + url,
+            url: serverPath + url,
             dataType: 'JSON',
             headers: {
                 "token": token
             },
-            success: function (data) {
-                console.log(data)
+            success: function (data, status, xhr) {
+                parent.layer.close(loading);
+                var urlCreator = window.URL || window.webkitURL;
+                var blob = new Blob([data], {type: 'application/pdf'});
+                //var url = urlCreator.createObjectURL(blob); //这个函数的返回值是一个字符串，指向一块内存的地址。
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = "Report.pdf";
+                link.click();
             },
-            error: function (error) {
-                console.log(error)
+            error: function (xhr) {
+                parent.layer.close(loading);
+                alert(xhr.responseText);
             }
         });
     };
