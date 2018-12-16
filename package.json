@@ -1,7 +1,7 @@
 {
-  "name": "shannonai-search",
+  "name": "search-test",
   "version": "1.0.0",
-  "description": "shannonai-search",
+  "description": "search-test",
   "main": "index.js",
   "scripts": {
     "dev": "supervisor index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+http://git.seek-data.com/XueSong/shannonai-search.git"
+    "url": "git+https://github.com/dxxzst/NodeTest.git"
   },
   "keywords": [
     "node",
     "test"
   ],
   "author": "XueSong",
-  "homepage": "http://git.seek-data.com/XueSong/shannonai-search.git",
+  "homepage": "https://github.com/dxxzst/NodeTest.git",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
