@@ -50,13 +50,12 @@
             },
             success: function (data, status, xhr) {
                 parent.layer.close(loading);
-                var urlCreator = window.URL || window.webkitURL;
-                var blob = new Blob([data], {type: 'application/pdf'});
-                //var url = urlCreator.createObjectURL(blob); //这个函数的返回值是一个字符串，指向一块内存的地址。
-                var link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = "Report.pdf";
-                link.click();
+                if (data) {
+                    var tempUrl = data.split('/');
+                    tempUrl[0] = serverPath;
+                    var tempWindow = window.open('_blank'); // 先打开页面
+                    tempWindow.location = tempUrl.join('/'); // 后更改页面地址
+                }
             },
             error: function (xhr) {
                 parent.layer.close(loading);
