@@ -1,5 +1,4 @@
 (function () {
-    var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieWltZW5nIiwicGFzc3dvcmQiOiJ5aW1lbmciLCJ1c2VyVHlwZSI6InR5cGUxIiwiZXhwIjoxNTQ3MTc3Mzk3LCJpc3MiOiJnby5taWNyby5zcnYudXNlciJ9.1znZIOV6gvEp5-B-AfgkCqyHAAKwhlIvTc3-svMGoPI";
     var arr = [];
     var serverPath = "http://" + window.location.host;
 
