@@ -10,7 +10,6 @@
         });
         $.ajax({
             type: "POST",
-            //url: "http://dev.shannonai.com:8011/api/search/research_report_figure",
             url: serverPath + "/api/search/research_report_figure",
             dataType: 'JSON',
             data: JSON.stringify(params),
