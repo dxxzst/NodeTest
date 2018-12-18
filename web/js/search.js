@@ -40,7 +40,6 @@
         });
         $.ajax({
             type: "get",
-            //url: "http://dev.shannonai.com:8011" + url,
             url: serverPath + url,
             dataType: 'JSON',
             headers: {
