@@ -4,33 +4,33 @@ var request = require('request');
 
 const token = "";
 
-function requestSearch(callback, data) {
-    let opt = {
-        host: 'dev.shannonai.com',
-        port: '8011',
-        method: 'POST',
-        path: '/api/search/research_report_figure',
-        headers: {
-            "Content-Type": "application/json",
-            "token": token
-        }
-    };
+// function requestSearch(callback, data) {
+//     let opt = {
+//         host: 'dev.shannonai.com',
+//         port: '8011',
+//         method: 'POST',
+//         path: '/api/search/research_report_figure',
+//         headers: {
+//             "Content-Type": "application/json",
+//             "token": token
+//         }
+//     };
 
-    let body = '';
-    let req = http.request(opt, function (res) {
-        console.log("response: " + res.statusCode);
-        res.on('data', function (data) {
-            body += data;
-        }).on('end', function () {
-            callback(body);
-        });
-    }).on('error', function (e) {
-        body = "error: " + e.message;
-        callback(body);
-    });
-    req.write(data);
-    req.end();
-}
+//     let body = '';
+//     let req = http.request(opt, function (res) {
+//         console.log("response: " + res.statusCode);
+//         res.on('data', function (data) {
+//             body += data;
+//         }).on('end', function () {
+//             callback(body);
+//         });
+//     }).on('error', function (e) {
+//         body = "error: " + e.message;
+//         callback(body);
+//     });
+//     req.write(data);
+//     req.end();
+// }
 
 function requestPdf2(callback, url) {
     let options = {
